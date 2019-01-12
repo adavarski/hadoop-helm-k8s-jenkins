@@ -33,7 +33,7 @@ node {
         }
 
     stage('Deploy') {
-        sh 'kubectl create namespace hadoop'
+        sh 'kubectl --kubeconfig=/home/davar/.kube/config create namespace hadoop'
         sh 'helm install helm/ --name hadoop --namespace hadoop'
      }
     }
