@@ -1,4 +1,4 @@
-### Setup 
+### Manual Setup 
 
 ```
 minikube start --cpus 2 --memory 12288
@@ -32,8 +32,14 @@ $ kubectl delete namespace hadoop
 namespace "hadoop" deleted
 
 ```
+### Jenkins Setup
+```
+minikube ssh ->  get /etc/kubernetes/admin.conf and change localhost to 192.168.99.109 (minikube ip) 
+kubectl --kubeconfig=./admin.conf get po
 
+Setup jenkins pipeline 
 
+```
 # Hadoop Chart
 
 [Hadoop](https://hadoop.apache.org/) is a framework for running large scale distributed applications.
