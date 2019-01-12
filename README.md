@@ -26,6 +26,8 @@ hadoop-hadoop-yarn-nm-0                     0/1     Running   0          2m
 hadoop-hadoop-yarn-rm-0                     1/1     Running   0          2m
 hadoop-hadoop-zepplin-nn-77b4cf5c5c-z7r97   1/1     Running   0          2m
 
+clean:
+
 $ helm del --purge hadoop
 release "hadoop" deleted
 $ kubectl delete namespace hadoop
@@ -53,6 +55,7 @@ This chart is primarily intended to be used for YARN and MapReduce job execution
 To install the chart with the release name `hadoop` that utilizes 50% of the available node resources:
 
 ```
+helm install . --name hadoop --set image=davarski/hadoop:2.9.0
 $ helm install . --name hadoop-1.0.0 --set image.tag=hadoop-1.0.0
 ```    
 
