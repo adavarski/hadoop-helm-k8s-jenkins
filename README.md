@@ -1,5 +1,40 @@
+### Setup 
+
+```
+minikube start --cpus 2 --memory 12288
+git clone https://github.com/adavarski/hadoop-helm-k8s/
+cd docker
+cp Dockerfile.2.9.0 Dockerfile
+docker build -t davarski/hadoop:2.9.0 .
+docker login
+docker push davarski/hadoop:2.9.0
+cd ../helm
+vi values.yml
+grep "hadoopVer" values.yaml 
+hadoopVersion: 2.9.0
+grep "image: davarski" values.yaml 
+image: davarski/hadoop:2.9.0
+
+kubectl create namespace hadoop
+helm install . --name hadoop --namespace hadoop
+
+$ kubectl get pod -nhadoop
+NAME                                        READY   STATUS    RESTARTS   AGE
+hadoop-hadoop-hdfs-dn-0                     1/1     Running   0          2m
+hadoop-hadoop-hdfs-nn-0                     1/1     Running   0          2m
+hadoop-hadoop-yarn-nm-0                     0/1     Running   0          2m
+hadoop-hadoop-yarn-rm-0                     1/1     Running   0          2m
+hadoop-hadoop-zepplin-nn-77b4cf5c5c-z7r97   1/1     Running   0          2m
+
+$ helm del --purge hadoop
+release "hadoop" deleted
+$ kubectl delete namespace hadoop
+namespace "hadoop" deleted
+
+```
+
+
 # Hadoop Chart
-## 2018 gjyoung1974@gmail.com
 
 [Hadoop](https://hadoop.apache.org/) is a framework for running large scale distributed applications.
 
