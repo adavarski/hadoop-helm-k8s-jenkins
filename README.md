@@ -301,7 +301,7 @@ To install the chart with the release name `hadoop` that utilizes 50% of the ava
 
 ```
 helm install . --name hadoop --set image=davarski/hadoop:2.9.0
-$ helm install . --name hadoop-1.0.0 --set image.tag=hadoop-1.0.0
+$ helm install . --name hadoop-1.0.0 $(stable/hadoop/tools/calc_resources.sh 50) --set image.tag=hadoop-1.0.0
 ```    
 
 port fordwar to the Yarn UI    
