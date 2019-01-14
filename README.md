@@ -341,7 +341,7 @@ The following table lists the configurable parameters of the Hadoop chart and th
 
 | Parameter                                         | Description                                                                        | Default                                                          |
 | ------------------------------------------------- | -------------------------------                                                    | ---------------------------------------------------------------- |
-| `image`                                           | Hadoop image ([source](https://github.com/Comcast/kube-yarn/tree/master/image))    | `danisla/hadoop:{VERSION}`                                       |
+| `image`                                           | Hadoop image based on ([source](https://github.com/Comcast/kube-yarn/tree/master/image))    | `davarski/hadoop:{VERSION}`                                       |
 | `imagePullPolicy`                                 | Pull policy for the images                                                         | `IfNotPresent`                                                   |
 | `hadoopVersion`                                   | Version of hadoop libraries being used                                              | `{VERSION}`                                                      |
 | `antiAffinity`                                    | Pod antiaffinity, `hard` or `soft`                                                 | `hard`                                                           |
