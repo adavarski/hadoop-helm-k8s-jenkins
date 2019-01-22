@@ -1,5 +1,4 @@
 # Hadoop Chart
-## 2018 gjyoung1974@gmail.com
 
 [Hadoop](https://hadoop.apache.org/) is a framework for running large scale distributed applications.
 
