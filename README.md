@@ -39,6 +39,15 @@ namespace "hadoop" deleted
 minikube ssh ->  get /etc/kubernetes/admin.conf and change localhost to 192.168.99.109 (minikube ip) 
 kubectl --kubeconfig=./admin.conf get po
 
+$ grep "2.9.0" Dockerfile 
+ARG HADOOP_VERSION=2.9.0
+$ grep "2.9.0" helm/values.yaml
+image: davarski/hadoop:2.9.0
+hadoopVersion: 2.9.0
+$ grep "2.9.0" Jenkinsfile 
+app.push("2.9.0")
+
+
 Setup jenkins pipeline 
 
 Started by user Anastas Dimov
