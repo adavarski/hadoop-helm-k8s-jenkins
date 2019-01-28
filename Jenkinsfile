@@ -29,7 +29,7 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials') {
-            app.push("2.9.0")
+            app.push("3.2.0")
         }
 
     stage('Deploy') {
