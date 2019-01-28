@@ -1,10 +1,10 @@
 # The base hadoop image to use for all components.
 # See this repo for image build details: https://github.com/Comcast/kube-yarn/tree/master/image
-image: davarski/hadoop:2.9.0
+image: davarski/hadoop:2.9.2
 imagePullPolicy: IfNotPresent
 
 # The version of the hadoop libraries being used in the image.
-hadoopVersion: 2.9.0
+hadoopVersion: 2.9.2
 
 # Select antiAffinity as either hard or soft, default is hard
 antiAffinity: "soft"
