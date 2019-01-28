@@ -1,7 +1,7 @@
 FROM java:8-jre
 
 # Add native libs
-ARG HADOOP_VERSION=2.9.0
+ARG HADOOP_VERSION=2.9.2
 ENV KEYS http://www-eu.apache.org/dist/hadoop/common/KEYS
 ENV KEYS_TMP /tmp/KEYS
 ENV HADOOP_INSTALLER hadoop-$HADOOP_VERSION.tar.gz
